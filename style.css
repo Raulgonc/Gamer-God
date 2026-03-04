@@ -1,0 +1,60 @@
+* {
+    font-family: "Share Tech", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(31, 30, 30);
+    color: rgb(155, 153, 153);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+h1 {
+    font-size: 40px;
+
+    color: rgb(168, 168, 153);
+    font-weight: bold;
+}
+
+span {
+    color: #5f5fc9;
+}
+
+p {
+    font-weight: bold;
+    margin: 10px;
+}
+
+textarea {
+    resize: none;
+    width: 100%;
+    max-width: 640px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background: rgb(51, 51, 51);
+    color: antiquewhite;
+}
+
+button {
+    width: 100%;
+    max-width: 640px;
+    background-color: #5f5fc9;
+    ;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+    padding: 14px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.resposta {
+    margin-top: 20px;
+}
