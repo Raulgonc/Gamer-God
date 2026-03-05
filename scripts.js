@@ -5,6 +5,7 @@
 const botao = document.querySelector(".botao-gerar")
 const caixaTexto = document.querySelector(".caixa-texto")
 const respostaDiv = document.querySelector(".resposta")
+const endereco = "https://api.groq.com/openai/v1/chat/completions"
 
 
 // ===============================
