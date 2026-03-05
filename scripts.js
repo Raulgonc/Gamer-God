@@ -1,31 +1,22 @@
-// ===============================
-// CONFIGURAÇÃO INICIAL
-// ===============================
-
-const botao = document.querySelector(".botao-gerar")
-const caixaTexto = document.querySelector(".caixa-texto")
-const respostaDiv = document.querySelector(".resposta")
-const endereco = "api/chat"
-
 
 // ===============================
-// FUNÇÃO PRINCIPAL
+// EVENTO DO BOTÃO
 // ===============================
+
+
 
 async function gerartexto() {
 
     let textousuario = caixaTexto.value.trim()
 
     if (!textousuario) {
-        respostaDiv.innerText = "Digite uma pergunta primeiro 🎮"
+        respostaDiv.value = "Digite uma pergunta primeiro 🎮"
         return
     }
-    // ATIVA A ANIMAÇÃO
+
+    // animação
     respostaDiv.classList.add("loading")
     respostaDiv.value = "Pensando... 🤖"
-
-
-
 
     try {
 
@@ -38,7 +29,7 @@ async function gerartexto() {
                 messages: [
                     {
                         role: "system",
-                        content: "Você é um assistente especialista em jogos que ajuda gamers com dúvidas, estratégias, builds, walkthroughs e dicas."
+                        content: "Você é um assistente especialista em jogos."
                     },
                     {
                         role: "user",
@@ -49,9 +40,8 @@ async function gerartexto() {
         })
 
         if (!resposta.ok) {
-            let erro = await resposta.json()
-            console.error("Erro da API:", erro)
-            respostaDiv.innerText = "Erro ao consultar a IA 😢"
+            respostaDiv.classList.remove("loading")
+            respostaDiv.value = "Erro ao consultar a IA 😢"
             return
         }
 
@@ -59,17 +49,15 @@ async function gerartexto() {
 
         let textoIA = dados.choices[0].message.content
 
-        respostaDiv.innerText = textoIA
+        respostaDiv.classList.remove("loading")
+
+        respostaDiv.value = textoIA
 
     } catch (erro) {
-        console.error("Erro inesperado:", erro)
-        respostaDiv.innerText = "Erro inesperado 😵"
+
+        respostaDiv.classList.remove("loading")
+
+        respostaDiv.value = "Erro inesperado 😵"
     }
 }
-
-
-// ===============================
-// EVENTO DO BOTÃO
-// ===============================
-
 botao.addEventListener("click", gerartexto)
