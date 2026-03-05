@@ -6,55 +6,175 @@
 }
 
 body {
-    background-color: rgb(31, 30, 30);
-    color: rgb(155, 153, 153);
+    background: radial-gradient(circle at top, #1f1e1e, #0f0f0f);
+    color: rgb(200, 200, 200);
+
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+
+    min-height: 100vh;
 }
 
+/* container central */
+
+.container {
+    width: 90%;
+    max-width: 700px;
+
+    padding: 35px;
+
+    border-radius: 16px;
+
+    background: #141414;
+
+    box-shadow:
+        0 0 10px #5f5fc955,
+        0 0 30px #5f5fc930;
+
+    animation: fadeIn 1s ease;
+}
+
+/* titulo */
 
 h1 {
-    font-size: 40px;
+    font-size: 42px;
+    text-align: center;
+    margin-bottom: 10px;
 
-    color: rgb(168, 168, 153);
-    font-weight: bold;
+    text-shadow: 0 0 8px #5f5fc9;
 }
 
 span {
     color: #5f5fc9;
+    text-shadow: 0 0 12px #5f5fc9;
 }
 
 p {
     font-weight: bold;
-    margin: 10px;
+    margin: 10px 0;
+    opacity: 0.8;
 }
+
+/* caixa de pergunta */
 
 textarea {
     resize: none;
+
     width: 100%;
     max-width: 640px;
-    padding: 10px;
-    border: 1px solid black;
+
+    padding: 14px;
+
     border-radius: 10px;
-    background: rgb(51, 51, 51);
+    border: 1px solid #333;
+
+    background: #1e1e1e;
+
     color: antiquewhite;
+
+    font-size: 18px;
+
+    transition: 0.2s;
 }
+
+textarea:focus {
+    outline: none;
+
+    border: 1px solid #5f5fc9;
+
+    box-shadow:
+        0 0 5px #5f5fc9,
+        0 0 15px #5f5fc955;
+}
+
+/* botão */
 
 button {
+
     width: 100%;
     max-width: 640px;
-    background-color: #5f5fc9;
-    ;
-    font-size: 16px;
-    font-weight: bold;
+
+    margin-top: 12px;
+
+    padding: 14px;
+
     border-radius: 10px;
     border: none;
-    padding: 14px;
+
+    font-size: 16px;
+    font-weight: bold;
+
     cursor: pointer;
-    margin-top: 10px;
+
+    color: white;
+
+    background: #5f5fc9;
+
+    transition: 0.2s;
+
+    box-shadow:
+        0 0 10px #5f5fc9,
+        0 0 25px #5f5fc955;
 }
 
+button:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 15px #7b7bff,
+        0 0 40px #5f5fc9;
+}
+
+/* resposta */
+
 .resposta {
+
     margin-top: 20px;
+
+    background: #1e1e1e;
+
+    border: 1px solid #333;
+
+    box-shadow:
+        inset 0 0 10px #000,
+        0 0 10px #5f5fc930;
+}
+
+/* animação carregando */
+
+.loading {
+    animation: pulse 1.5s infinite;
+}
+
+/* animações */
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+
+    0% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.5;
+    }
 }

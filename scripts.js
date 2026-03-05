@@ -20,8 +20,12 @@ async function gerartexto() {
         respostaDiv.innerText = "Digite uma pergunta primeiro 🎮"
         return
     }
+    // ATIVA A ANIMAÇÃO
+    respostaDiv.classList.add("loading")
+    respostaDiv.value = "Pensando... 🤖"
 
-    respostaDiv.innerText = "Pensando... 🤔"
+
+
 
     try {
 
