@@ -59,5 +59,6 @@ async function gerartexto() {
 
         respostaDiv.value = "Erro inesperado 😵"
     }
-}
+
 botao.addEventListener("click", gerartexto)
+}
